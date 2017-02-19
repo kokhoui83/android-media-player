@@ -42,6 +42,35 @@ public class PlayerActivity extends AppCompatActivity {
         preparePlayer(mp4VideoUri);
     }
 
+    @Override
+    public void onStart() {
+        super.onStart();
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+
+        if (player != null) {
+            player.release();
+        }
+    }
+
     private void initPlayer() {
         // Create default TrackSelector
         BandwidthMeter bandwidthMeter = new DefaultBandwidthMeter();

@@ -96,5 +96,8 @@ public class PlayerActivity extends AppCompatActivity {
         MediaSource videoSource = new DashMediaSource(mp4VideoUri, dataSourceFactory, new DefaultDashChunkSource.Factory(dataSourceFactory), null, null);
         // Prepare the player with the source.
         player.prepare(videoSource);
+
+        // start play
+        player.setPlayWhenReady(true);
     }
 }

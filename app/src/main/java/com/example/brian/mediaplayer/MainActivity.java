@@ -9,9 +9,12 @@ import android.widget.Button;
 public class MainActivity extends AppCompatActivity {
     Button playbtn1;
     Button playbtn2;
+    Button playbtn3;
 
-    String URL1 = "http://www.bok.net/dash/tears_of_steel/cleartext/stream.mpd";
-    String URL2 = "https://s3-ap-southeast-1.amazonaws.com/brian-stream-test/trailers/clear-starwars-rouge-one.mpd";
+    private static final String URL1 = "http://www.bok.net/dash/tears_of_steel/cleartext/stream.mpd";
+    private static final String URL2 = "https://s3-ap-southeast-1.amazonaws.com/brian-stream-test/trailers/clear-starwars-rouge-one.mpd";
+    private static final String URL3 = "https://s3-ap-southeast-1.amazonaws.com/brian-stream-test/trailers/encrypt-starwars-rouge-one.mpd";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,17 +28,31 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), PlayerActivity.class);
                 intent.putExtra("url", URL1);
+                intent.putExtra("drm", false);
                 startActivity(intent);
             }
         });
 
-        playbtn1 = (Button) findViewById(R.id.play_starwars_rouge_one);
+        playbtn2 = (Button) findViewById(R.id.play_starwars_rouge_one);
 
-        playbtn1.setOnClickListener(new View.OnClickListener() {
+        playbtn2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), PlayerActivity.class);
                 intent.putExtra("url", URL2);
+                intent.putExtra("drm", false);
+                startActivity(intent);
+            }
+        });
+
+        playbtn3 = (Button) findViewById(R.id.play_starwars_rouge_one_drm);
+
+        playbtn3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), PlayerActivity.class);
+                intent.putExtra("url", URL3);
+                intent.putExtra("drm", true);
                 startActivity(intent);
             }
         });

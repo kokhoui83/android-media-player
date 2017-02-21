@@ -10,11 +10,24 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.brian.mediaplayer.MainActivity">
 
-    <Button
-        android:id="@+id/play"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Play"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/play_tears_of_steel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tears of Steel"/>
+
+        <Button
+            android:id="@+id/play_starwars_rouge_one"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Starwars Rouge One Trailer"/>
+
+    </LinearLayout>
 
 
 </RelativeLayout>

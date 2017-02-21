@@ -1,5 +1,6 @@
 package com.example.brian.mediaplayer;
 
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -36,7 +37,9 @@ public class PlayerActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_player);
 
-        Uri mp4VideoUri = Uri.parse("http://www.bok.net/dash/tears_of_steel/cleartext/stream.mpd");
+        Intent intent = getIntent();
+
+        Uri mp4VideoUri = Uri.parse(intent.getStringExtra("url"));
 
         initPlayer();
         preparePlayer(mp4VideoUri);

@@ -33,6 +33,25 @@
             android:layout_height="wrap_content"
             android:text="Starwars Rouge One Trailer (drm)"/>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:gravity="bottom">
+
+            <Button
+                android:id="@+id/server_start"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Start Server"/>
+
+            <Button
+                android:id="@+id/server_stop"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Stop Server"/>
+        </LinearLayout>
+
     </LinearLayout>
 
 
